@@ -1,1 +1,491 @@
-<h1>Welcome to H<sub)2</sub>O</h1>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H2O Singur — Premium Fitness Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-ring"></div>
+            <div class="preloader-ring"></div>
+            <div class="preloader-ring"></div>
+            <span class="preloader-text">H2O Singur</span>
+        </div>
+    </div>
+
+    <!-- Cursor Follower -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
+    <!-- Theme Switcher Panel -->
+    <div id="theme-panel" class="theme-panel">
+        <button id="theme-panel-toggle" class="theme-panel-toggle" aria-label="Theme Settings">
+            <i class="fas fa-palette"></i>
+        </button>
+        <div class="theme-panel-content">
+            <h4 class="theme-panel-title">Customize Theme</h4>
+            <div class="theme-section">
+                <label class="theme-label">Accent Color</label>
+                <div class="accent-colors">
+                    <button class="accent-btn active" data-accent="#e63946" style="background:#e63946"
+                        aria-label="Red accent"></button>
+                    <button class="accent-btn" data-accent="#f4a261" style="background:#f4a261"
+                        aria-label="Orange accent"></button>
+                    <button class="accent-btn" data-accent="#2a9d8f" style="background:#2a9d8f"
+                        aria-label="Teal accent"></button>
+                    <button class="accent-btn" data-accent="#e9c46a" style="background:#e9c46a"
+                        aria-label="Gold accent"></button>
+                    <button class="accent-btn" data-accent="#a855f7" style="background:#a855f7"
+                        aria-label="Purple accent"></button>
+                    <button class="accent-btn" data-accent="#06b6d4" style="background:#06b6d4"
+                        aria-label="Cyan accent"></button>
+                    <button class="accent-btn" data-accent="#ec4899" style="background:#ec4899"
+                        aria-label="Pink accent"></button>
+                    <button class="accent-btn" data-accent="#84cc16" style="background:#84cc16"
+                        aria-label="Lime accent"></button>
+                </div>
+                <div class="custom-color-picker">
+                    <label class="theme-label" for="custom-accent">Custom Color</label>
+                    <div class="color-wheel-wrap">
+                        <input type="color" id="custom-accent" value="#e63946" class="color-wheel-input">
+                        <span class="color-hex" id="color-hex-display">#e63946</span>
+                    </div>
+                </div>
+            </div>
+            <div class="theme-section">
+                <label class="theme-label">Base Theme</label>
+                <div class="base-themes">
+                    <button class="base-theme-btn active" data-base="dark">
+                        <i class="fas fa-moon"></i> Dark
+                    </button>
+                    <button class="base-theme-btn" data-base="light">
+                        <i class="fas fa-sun"></i> Light
+                    </button>
+                </div>
+            </div>
+            <div class="theme-section">
+                <label class="theme-label">Border Radius</label>
+                <input type="range" id="radius-slider" min="0" max="24" value="12" class="theme-slider">
+            </div>
+            <div class="theme-section">
+                <label class="theme-label">Font Size</label>
+                <input type="range" id="font-slider" min="14" max="20" value="16" class="theme-slider">
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="main-header" class="main-header">
+        <nav class="navbar">
+            <a href="#/home" class="nav-logo" data-nav>
+                <span class="logo-icon"><i class="fas fa-dumbbell"></i></span>
+                <span class="logo-text">H2O<span class="logo-accent">Singur</span></span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#/home" data-nav class="nav-link active">Home</a></li>
+                <li><a href="#/about" data-nav class="nav-link">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="#/programs" data-nav class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/programs" data-nav>All Programs</a></li>
+                        <li><a href="#/programs?cat=strength" data-nav>Strength Training</a></li>
+                        <li><a href="#/programs?cat=cardio" data-nav>Cardio & HIIT</a></li>
+                        <li><a href="#/programs?cat=yoga" data-nav>Yoga & Flexibility</a></li>
+                        <li><a href="#/programs?cat=boxing" data-nav>Boxing & MMA</a></li>
+                        <li><a href="#/programs?cat=crossfit" data-nav>CrossFit</a></li>
+                    </ul>
+                </li>
+                <li><a href="#/trainers" data-nav class="nav-link">Trainers</a></li>
+                <li><a href="#/transformations" data-nav class="nav-link">Results</a></li>
+                <li><a href="#/shop" data-nav class="nav-link">Shop</a></li>
+                <li class="nav-dropdown">
+                    <a href="#/blog" data-nav class="nav-link">Blog <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/blog" data-nav>All Articles</a></li>
+                        <li><a href="#/blog/post-1" data-nav>Nutrition Tips</a></li>
+                        <li><a href="#/blog/post-2" data-nav>Training Guides</a></li>
+                        <li><a href="#/blog/post-3" data-nav>Mindset</a></li>
+                    </ul>
+                </li>
+                <li><a href="#/contact" data-nav class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="cart-icon-btn" class="nav-icon-btn" aria-label="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span id="cart-count" class="cart-count">0</span>
+                </button>
+                <a href="#/pricing" data-nav class="nav-cta-btn">Join Now</a>
+            </div>
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span class="logo-text">H2O<span class="logo-accent">Singur</span></span>
+            <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close"><i
+                    class="fas fa-times"></i></button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#/home" data-nav>Home</a></li>
+            <li><a href="#/about" data-nav>About</a></li>
+            <li><a href="#/programs" data-nav>Programs</a></li>
+            <li><a href="#/classes" data-nav>Classes</a></li>
+            <li><a href="#/trainers" data-nav>Trainers</a></li>
+            <li><a href="#/transformations" data-nav>Results</a></li>
+            <li><a href="#/schedule" data-nav>Schedule</a></li>
+            <li><a href="#/pricing" data-nav>Pricing</a></li>
+            <li><a href="#/shop" data-nav>Shop</a></li>
+            <li><a href="#/gallery" data-nav>Gallery</a></li>
+            <li><a href="#/blog" data-nav>Blog</a></li>
+            <li><a href="#/faq" data-nav>FAQ</a></li>
+            <li><a href="#/contact" data-nav>Contact</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <a href="#/pricing" data-nav class="nav-cta-btn mobile-cta">Join Now</a>
+            <div class="mobile-social">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <main id="app" class="app-container" role="main">
+        <!-- Dynamic content rendered by JS -->
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer" class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col footer-brand">
+                        <a href="#/home" data-nav class="footer-logo">
+                            <span class="logo-icon"><i class="fas fa-dumbbell"></i></span>
+                            <span class="logo-text">H2O<span class="logo-accent">Singur</span></span>
+                        </a>
+                        <p class="footer-desc">Transform your body, H2O your mind. Premium fitness training designed
+                            for those who refuse to settle for average.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h5 class="footer-heading">Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="#/about" data-nav>About Us</a></li>
+                            <li><a href="#/programs" data-nav>Programs</a></li>
+                            <li><a href="#/trainers" data-nav>Trainers</a></li>
+                            <li><a href="#/pricing" data-nav>Pricing</a></li>
+                            <li><a href="#/schedule" data-nav>Schedule</a></li>
+                            <li><a href="#/gallery" data-nav>Gallery</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h5 class="footer-heading">Resources</h5>
+                        <ul class="footer-links">
+                            <li><a href="#/blog" data-nav>Blog</a></li>
+                            <li><a href="#/faq" data-nav>FAQ</a></li>
+                            <li><a href="#/transformations" data-nav>Success Stories</a></li>
+                            <li><a href="#/shop" data-nav>Shop</a></li>
+                            <li><a href="#/contact" data-nav>Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h5 class="footer-heading">Legal</h5>
+                        <ul class="footer-links">
+                            <li><a href="#/privacy-policy" data-nav>Privacy Policy</a></li>
+                            <li><a href="#/terms" data-nav>Terms & Conditions</a></li>
+                            <li><a href="#/refund-policy" data-nav>Refund Policy</a></li>
+                            <li><a href="#/cookie-policy" data-nav>Cookie Policy</a></li>
+                            <li><a href="#/disclaimer" data-nav>Disclaimer</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h5 class="footer-heading">Contact Info</h5>
+                        <ul class="footer-contact">
+                            <li><i class="fas fa-map-marker-alt"></i><span>123 Singur Avenue, Downtown, NY 10001</span>
+                            </li>
+                            <li><i class="fas fa-phone"></i><span>+1 (980) 481-9829</span></li>
+                            <li><i class="fas fa-envelope"></i><span>hello@H2OSingur.com</span></li>
+                            <li><i class="fas fa-clock"></i><span>Mon-Sat: 5AM - 11PM</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p>&copy; 2025 H2O Singur Fitness Studio. All rights reserved.</p>
+                    <p>Crafted with <i class="fas fa-heart" style="color:var(--accent)"></i> for champions</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Appointment/Enquiry Modal -->
+    <div id="appointment-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-container appointment-modal-container">
+            <button class="modal-close" id="appointment-modal-close" aria-label="Close"><i
+                    class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2>Book Your <span class="text-accent">Appointment</span></h2>
+                <p>Start your transformation journey today</p>
+            </div>
+            <form id="appointment-form" class="premium-form" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="appt-name">Full Name <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="appt-name" name="fullName" placeholder="John Doe" required>
+                        </div>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="appt-email">Email Address <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="appt-email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="appt-phone">Phone Number <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="appt-phone" name="phone" placeholder="+1 234 567 890" required>
+                        </div>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="appt-age">Age</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-birthday-cake"></i>
+                            <input type="number" id="appt-age" name="age" placeholder="25" min="10" max="100">
+                        </div>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="appt-gender">Gender <span class="required">*</span></label>
+                        <div class="input-wrapper select-wrapper">
+                            <i class="fas fa-venus-mars"></i>
+                            <select id="appt-gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Non-Binary">Non-Binary</option>
+                                <option value="Prefer Not to Say">Prefer Not to Say</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow"></i>
+                        </div>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="appt-program">Preferred Program <span class="required">*</span></label>
+                        <div class="input-wrapper select-wrapper">
+                            <i class="fas fa-dumbbell"></i>
+                            <select id="appt-program" name="program" required>
+                                <option value="">Select Program</option>
+                                <option value="Strength Training">Strength Training</option>
+                                <option value="Cardio & HIIT">Cardio & HIIT</option>
+                                <option value="Yoga & Flexibility">Yoga & Flexibility</option>
+                                <option value="Boxing & MMA">Boxing & MMA</option>
+                                <option value="CrossFit">CrossFit</option>
+                                <option value="Personal Training">Personal Training</option>
+                                <option value="Group Classes">Group Classes</option>
+                                <option value="Weight Loss Program">Weight Loss Program</option>
+                                <option value="Muscle Building">Muscle Building</option>
+                                <option value="General Fitness">General Fitness</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow"></i>
+                        </div>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="appt-timeslot">Preferred Time Slot</label>
+                        <div class="input-wrapper select-wrapper">
+                            <i class="fas fa-clock"></i>
+                            <select id="appt-timeslot" name="timeSlot">
+                                <option value="">Select Time Slot</option>
+                                <option value="Early Morning (5-7 AM)">Early Morning (5-7 AM)</option>
+                                <option value="Morning (7-9 AM)">Morning (7-9 AM)</option>
+                                <option value="Late Morning (9-11 AM)">Late Morning (9-11 AM)</option>
+                                <option value="Afternoon (12-3 PM)">Afternoon (12-3 PM)</option>
+                                <option value="Evening (4-7 PM)">Evening (4-7 PM)</option>
+                                <option value="Night (7-10 PM)">Night (7-10 PM)</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow"></i>
+                        </div>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="appt-goal">Fitness Goal</label>
+                        <div class="input-wrapper select-wrapper">
+                            <i class="fas fa-bullseye"></i>
+                            <select id="appt-goal" name="fitnessGoal">
+                                <option value="">Select Goal</option>
+                                <option value="Weight Loss">Weight Loss</option>
+                                <option value="Muscle Gain">Muscle Gain</option>
+                                <option value="Body Recomposition">Body Recomposition</option>
+                                <option value="Flexibility">Flexibility</option>
+                                <option value="Endurance">Endurance</option>
+                                <option value="Sports Performance">Sports Performance</option>
+                                <option value="General Wellness">General Wellness</option>
+                                <option value="Injury Rehabilitation">Injury Rehabilitation</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow"></i>
+                        </div>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="appt-experience">Previous Gym Experience</label>
+                        <div class="input-wrapper select-wrapper">
+                            <i class="fas fa-award"></i>
+                            <select id="appt-experience" name="experience">
+                                <option value="">Select Experience Level</option>
+                                <option value="Complete Beginner">Complete Beginner</option>
+                                <option value="Less than 6 months">Less than 6 months</option>
+                                <option value="6 months - 1 year">6 months - 1 year</option>
+                                <option value="1-3 years">1-3 years</option>
+                                <option value="3+ years">3+ years</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow"></i>
+                        </div>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="appt-hear">How did you hear about us?</label>
+                        <div class="input-wrapper select-wrapper">
+                            <i class="fas fa-search"></i>
+                            <select id="appt-hear" name="referralSource">
+                                <option value="">Select Option</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="YouTube">YouTube</option>
+                                <option value="Google Search">Google Search</option>
+                                <option value="Friend/Family Referral">Friend/Family Referral</option>
+                                <option value="Walk-in">Walk-in</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow"></i>
+                        </div>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="appt-startdate">Preferred Start Date</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-calendar-alt"></i>
+                            <input type="date" id="appt-startdate" name="startDate">
+                        </div>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="appt-medical">Any Medical Conditions or Injuries?</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-notes-medical"></i>
+                            <input type="text" id="appt-medical" name="medicalConditions"
+                                placeholder="E.g., Knee injury, Asthma, None">
+                        </div>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="appt-message">Additional Message</label>
+                        <div class="input-wrapper textarea-wrapper">
+                            <i class="fas fa-comment-alt"></i>
+                            <textarea id="appt-message" name="message" rows="3"
+                                placeholder="Tell us about your fitness goals, preferences, or any questions..."></textarea>
+                        </div>
+                        <span class="form-error"></span>
+                    </div>
+                </div>
+                <button type="submit" class="form-submit-btn">
+                    <span>Book Appointment via WhatsApp</span>
+                    <i class="fab fa-whatsapp"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-sidebar-header">
+            <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+            <button id="cart-sidebar-close" class="cart-sidebar-close" aria-label="Close"><i
+                    class="fas fa-times"></i></button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <a href="#/shop" data-nav class="btn-outline-accent">Browse Shop</a>
+            </div>
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-amount">$0.00</span>
+            </div>
+            <button id="cart-checkout-btn" class="form-submit-btn" disabled>
+                <span>Buy via WhatsApp</span>
+                <i class="fab fa-whatsapp"></i>
+            </button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <a href="https://wa.me/919804819829" target="_blank" class="fab-btn fab-whatsapp" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="fab-tooltip">Chat with us</span>
+        </a>
+        <button id="fab-appointment" class="fab-btn fab-appointment" aria-label="Book Appointment">
+            <i class="fas fa-calendar-check"></i>
+            <span class="fab-tooltip">Book Appointment</span>
+        </button>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Quick View Modal -->
+    <div id="quickview-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-container quickview-modal-container">
+            <button class="modal-close" id="quickview-close" aria-label="Close"><i class="fas fa-times"></i></button>
+            <div id="quickview-content" class="quickview-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
