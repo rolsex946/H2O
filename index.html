@@ -4,488 +4,1591 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H2O Singur — Premium Fitness Studio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>H2O FITNESS Singur — Premium Gym & Fitness Center</title>
+    <meta name="description"
+        content="H2O FITNESS Singur — Transform your body, transform your life. Premium gym with world-class trainers, equipment, and programs.">
     <link rel="stylesheet" href="styles.css">
+    <!-- ============================================
+         GOOGLE FONTS — Inter + Playfair Display
+         ============================================ -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <!-- ============================================
+         FONT AWESOME — Icon Library
+         ============================================ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- Preloader -->
+
+    <!-- ============================================
+         PRELOADER — Animated loading screen
+         ============================================ -->
     <div id="preloader">
         <div class="preloader-inner">
             <div class="preloader-ring"></div>
             <div class="preloader-ring"></div>
             <div class="preloader-ring"></div>
-            <span class="preloader-text">H2O Singur</span>
+            <div class="preloader-text">
+                <span>H2O FITNESS</span>
+            </div>
+            <div class="preloader-text">
+                <span>SINGUR</span>
+            </div>
         </div>
     </div>
 
-    <!-- Cursor Follower -->
-    <div id="cursor-dot"></div>
-    <div id="cursor-outline"></div>
+    <!-- ============================================
+         CURSOR — Custom premium cursor (desktop)
+         ============================================ -->
+    <div id="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
 
-    <!-- Theme Switcher Panel -->
-    <div id="theme-panel" class="theme-panel">
-        <button id="theme-panel-toggle" class="theme-panel-toggle" aria-label="Theme Settings">
-            <i class="fas fa-palette"></i>
-        </button>
-        <div class="theme-panel-content">
-            <h4 class="theme-panel-title">Customize Theme</h4>
-            <div class="theme-section">
-                <label class="theme-label">Accent Color</label>
-                <div class="accent-colors">
-                    <button class="accent-btn active" data-accent="#e63946" style="background:#e63946"
-                        aria-label="Red accent"></button>
-                    <button class="accent-btn" data-accent="#f4a261" style="background:#f4a261"
-                        aria-label="Orange accent"></button>
-                    <button class="accent-btn" data-accent="#2a9d8f" style="background:#2a9d8f"
-                        aria-label="Teal accent"></button>
-                    <button class="accent-btn" data-accent="#e9c46a" style="background:#e9c46a"
-                        aria-label="Gold accent"></button>
-                    <button class="accent-btn" data-accent="#a855f7" style="background:#a855f7"
-                        aria-label="Purple accent"></button>
-                    <button class="accent-btn" data-accent="#06b6d4" style="background:#06b6d4"
-                        aria-label="Cyan accent"></button>
-                    <button class="accent-btn" data-accent="#ec4899" style="background:#ec4899"
-                        aria-label="Pink accent"></button>
-                    <button class="accent-btn" data-accent="#84cc16" style="background:#84cc16"
-                        aria-label="Lime accent"></button>
-                </div>
-                <div class="custom-color-picker">
-                    <label class="theme-label" for="custom-accent">Custom Color</label>
-                    <div class="color-wheel-wrap">
-                        <input type="color" id="custom-accent" value="#e63946" class="color-wheel-input">
-                        <span class="color-hex" id="color-hex-display">#e63946</span>
-                    </div>
-                </div>
+    <!-- ============================================
+         NAVIGATION — Top navigation bar
+         ============================================ -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="#home" class="nav-logo" data-nav="home">
+                <span class="logo-icon">
+                    <i class="fas fa-dumbbell"></i>
+                </span>
+                <span class="logo-text">
+                    <span class="logo-main">H2O FITNESS</span>
+                    <span class="logo-sub">SINGUR</span>
+                </span>
+            </a>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" data-nav="home" class="nav-link active">Home</a></li>
+                <li><a href="#about" data-nav="about" class="nav-link">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="#programs" data-nav="programs" class="nav-link">Programs <i
+                            class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#programs" data-nav="programs" data-filter="strength">Strength Training</a></li>
+                        <li><a href="#programs" data-nav="programs" data-filter="cardio">Cardio & HIIT</a></li>
+                        <li><a href="#programs" data-nav="programs" data-filter="yoga">Yoga & Flexibility</a></li>
+                        <li><a href="#programs" data-nav="programs" data-filter="crossfit">CrossFit</a></li>
+                        <li><a href="#programs" data-nav="programs" data-filter="personal">Personal Training</a></li>
+                    </ul>
+                </li>
+                <li><a href="#transformation" data-nav="transformation" class="nav-link">Transformations</a></li>
+                <li><a href="#pricing" data-nav="pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#shop" data-nav="shop" class="nav-link">Shop</a></li>
+                <li><a href="#blog" data-nav="blog" class="nav-link">Blog</a></li>
+                <li><a href="#gallery" data-nav="gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" data-nav="contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Nav Actions -->
+            <div class="nav-actions">
+                <!-- Theme Switcher Toggle -->
+                <button class="nav-icon-btn theme-switcher-toggle" id="themePanelToggle" aria-label="Theme Settings">
+                    <i class="fas fa-palette"></i>
+                </button>
+                <!-- Cart Icon -->
+                <button class="nav-icon-btn cart-toggle" id="cartToggle" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <!-- CTA Button -->
+                <a href="#contact" data-nav="contact" class="nav-cta-btn">
+                    <span>Join Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <!-- Mobile Menu Toggle -->
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         MOBILE MENU — Full screen overlay
+         ============================================ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-logo">H2O FITNESS <span>SINGUR</span></span>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#home" data-nav="home" class="mobile-nav-link active">Home</a></li>
+            <li><a href="#about" data-nav="about" class="mobile-nav-link">About</a></li>
+            <li><a href="#programs" data-nav="programs" class="mobile-nav-link">Programs</a></li>
+            <li><a href="#transformation" data-nav="transformation" class="mobile-nav-link">Transformations</a></li>
+            <li><a href="#trainers" data-nav="trainers" class="mobile-nav-link">Trainers</a></li>
+            <li><a href="#pricing" data-nav="pricing" class="mobile-nav-link">Pricing</a></li>
+            <li><a href="#shop" data-nav="shop" class="mobile-nav-link">Shop</a></li>
+            <li><a href="#blog" data-nav="blog" class="mobile-nav-link">Blog</a></li>
+            <li><a href="#gallery" data-nav="gallery" class="mobile-nav-link">Gallery</a></li>
+            <li><a href="#contact" data-nav="contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <div class="mobile-social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <a href="#contact" data-nav="contact" class="mobile-cta-btn">Book Free Trial</a>
+        </div>
+    </div>
+
+    <!-- ============================================
+         THEME PANEL — Color switcher sidebar
+         ============================================ -->
+    <div class="theme-panel" id="themePanel">
+        <div class="theme-panel-header">
+            <h3>Theme Settings</h3>
+            <button class="theme-panel-close" id="themePanelClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="theme-panel-body">
+            <!-- Mode Toggle -->
             <div class="theme-section">
-                <label class="theme-label">Base Theme</label>
-                <div class="base-themes">
-                    <button class="base-theme-btn active" data-base="dark">
+                <h4>Mode</h4>
+                <div class="theme-mode-toggle">
+                    <button class="mode-btn active" data-mode="dark">
                         <i class="fas fa-moon"></i> Dark
                     </button>
-                    <button class="base-theme-btn" data-base="light">
+                    <button class="mode-btn" data-mode="light">
                         <i class="fas fa-sun"></i> Light
                     </button>
                 </div>
             </div>
+            <!-- Accent Colors -->
             <div class="theme-section">
-                <label class="theme-label">Border Radius</label>
-                <input type="range" id="radius-slider" min="0" max="24" value="12" class="theme-slider">
+                <h4>Accent Color</h4>
+                <div class="accent-colors">
+                    <button class="accent-btn active" data-accent="red" style="--preview:#E53935;"
+                        title="H2O FITNESS Red"></button>
+                    <button class="accent-btn" data-accent="gold" style="--preview:#FFB300;"
+                        title="Premium Gold"></button>
+                    <button class="accent-btn" data-accent="emerald" style="--preview:#00C853;"
+                        title="Emerald"></button>
+                    <button class="accent-btn" data-accent="cyan" style="--preview:#00BCD4;" title="Cyan"></button>
+                    <button class="accent-btn" data-accent="violet" style="--preview:#7C4DFF;" title="Violet"></button>
+                    <button class="accent-btn" data-accent="pink" style="--preview:#FF4081;" title="Hot Pink"></button>
+                    <button class="accent-btn" data-accent="orange" style="--preview:#FF6D00;"
+                        title="Blaze Orange"></button>
+                    <button class="accent-btn" data-accent="lime" style="--preview:#AEEA00;"
+                        title="Electric Lime"></button>
+                </div>
             </div>
+            <!-- Custom Color Picker -->
             <div class="theme-section">
-                <label class="theme-label">Font Size</label>
-                <input type="range" id="font-slider" min="14" max="20" value="16" class="theme-slider">
+                <h4>Custom Accent</h4>
+                <div class="custom-color-picker">
+                    <input type="color" id="customAccentPicker" value="#E53935">
+                    <span class="color-hex" id="colorHexDisplay">#E53935</span>
+                    <button class="apply-custom-color" id="applyCustomColor">Apply</button>
+                </div>
+            </div>
+            <!-- Font Size -->
+            <div class="theme-section">
+                <h4>Font Size</h4>
+                <div class="font-size-slider">
+                    <span>Aa</span>
+                    <input type="range" id="fontSizeSlider" min="14" max="20" value="16">
+                    <span>Aa</span>
+                </div>
+            </div>
+            <!-- Animations Toggle -->
+            <div class="theme-section">
+                <h4>Animations</h4>
+                <div class="toggle-switch-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="animToggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="toggle-label">Enable Animations</span>
+                </div>
+            </div>
+            <!-- Rounded Corners -->
+            <div class="theme-section">
+                <h4>Border Radius</h4>
+                <div class="font-size-slider">
+                    <span><i class="fas fa-square"></i></span>
+                    <input type="range" id="radiusSlider" min="0" max="24" value="12">
+                    <span><i class="fas fa-circle"></i></span>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Navigation -->
-    <header id="main-header" class="main-header">
-        <nav class="navbar">
-            <a href="#/home" class="nav-logo" data-nav>
-                <span class="logo-icon"><i class="fas fa-dumbbell"></i></span>
-                <span class="logo-text">H2O<span class="logo-accent">Singur</span></span>
-            </a>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#/home" data-nav class="nav-link active">Home</a></li>
-                <li><a href="#/about" data-nav class="nav-link">About</a></li>
-                <li class="nav-dropdown">
-                    <a href="#/programs" data-nav class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#/programs" data-nav>All Programs</a></li>
-                        <li><a href="#/programs?cat=strength" data-nav>Strength Training</a></li>
-                        <li><a href="#/programs?cat=cardio" data-nav>Cardio & HIIT</a></li>
-                        <li><a href="#/programs?cat=yoga" data-nav>Yoga & Flexibility</a></li>
-                        <li><a href="#/programs?cat=boxing" data-nav>Boxing & MMA</a></li>
-                        <li><a href="#/programs?cat=crossfit" data-nav>CrossFit</a></li>
-                    </ul>
-                </li>
-                <li><a href="#/trainers" data-nav class="nav-link">Trainers</a></li>
-                <li><a href="#/transformations" data-nav class="nav-link">Results</a></li>
-                <li><a href="#/shop" data-nav class="nav-link">Shop</a></li>
-                <li class="nav-dropdown">
-                    <a href="#/blog" data-nav class="nav-link">Blog <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#/blog" data-nav>All Articles</a></li>
-                        <li><a href="#/blog/post-1" data-nav>Nutrition Tips</a></li>
-                        <li><a href="#/blog/post-2" data-nav>Training Guides</a></li>
-                        <li><a href="#/blog/post-3" data-nav>Mindset</a></li>
-                    </ul>
-                </li>
-                <li><a href="#/contact" data-nav class="nav-link">Contact</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button id="cart-icon-btn" class="nav-icon-btn" aria-label="Cart">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span id="cart-count" class="cart-count">0</span>
-                </button>
-                <a href="#/pricing" data-nav class="nav-cta-btn">Join Now</a>
-            </div>
-            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menu">
-                <span></span><span></span><span></span>
+    <!-- ============================================
+         CART SIDEBAR — Shopping cart slide panel
+         ============================================ -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar-header">
+            <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fas fa-times"></i>
             </button>
-        </nav>
-    </header>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="mobile-menu">
-        <div class="mobile-menu-header">
-            <span class="logo-text">H2O<span class="logo-accent">Singur</span></span>
-            <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close"><i
-                    class="fas fa-times"></i></button>
         </div>
-        <ul class="mobile-nav-links">
-            <li><a href="#/home" data-nav>Home</a></li>
-            <li><a href="#/about" data-nav>About</a></li>
-            <li><a href="#/programs" data-nav>Programs</a></li>
-            <li><a href="#/classes" data-nav>Classes</a></li>
-            <li><a href="#/trainers" data-nav>Trainers</a></li>
-            <li><a href="#/transformations" data-nav>Results</a></li>
-            <li><a href="#/schedule" data-nav>Schedule</a></li>
-            <li><a href="#/pricing" data-nav>Pricing</a></li>
-            <li><a href="#/shop" data-nav>Shop</a></li>
-            <li><a href="#/gallery" data-nav>Gallery</a></li>
-            <li><a href="#/blog" data-nav>Blog</a></li>
-            <li><a href="#/faq" data-nav>FAQ</a></li>
-            <li><a href="#/contact" data-nav>Contact</a></li>
-        </ul>
-        <div class="mobile-menu-footer">
-            <a href="#/pricing" data-nav class="nav-cta-btn mobile-cta">Join Now</a>
-            <div class="mobile-social">
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <div class="cart-sidebar-body" id="cartItems">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <a href="#shop" data-nav="shop" class="cart-shop-link">Browse Shop</a>
             </div>
+        </div>
+        <div class="cart-sidebar-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="cart-checkout-btn" id="cartCheckout">
+                <i class="fab fa-whatsapp"></i> Send Enquiry via WhatsApp
+            </button>
         </div>
     </div>
 
-    <!-- Main App Container -->
-    <main id="app" class="app-container" role="main">
-        <!-- Dynamic content rendered by JS -->
+    <!-- ============================================
+         OVERLAY — For cart/theme panel
+         ============================================ -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ============================================
+         MAIN CONTENT AREA — All pages render here
+         ============================================ -->
+    <main id="mainContent">
+
+        <!-- ============================================
+             PAGE: HOME
+             ============================================ -->
+        <section class="page" id="page-home" data-page="home">
+
+            <!-- HERO SECTION -->
+            <div class="hero">
+                <div class="hero-bg">
+                    <div class="hero-gradient"></div>
+                    <div class="hero-particles" id="heroParticles"></div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-badge" data-animate="fade-down">
+                        <span class="badge-dot"></span>
+                        <span>#1 Rated Fitness Center in Town</span>
+                    </div>
+                    <h1 class="hero-title" data-animate="fade-up">
+                        <span class="hero-line">Transform</span>
+                        <span class="hero-line accent-text">Your Body</span>
+                        <span class="hero-line">Transform <span class="outline-text">Your Life</span></span>
+                    </h1>
+                    <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+                        Where dedication meets innovation. Experience world-class training,
+                        cutting-edge equipment, and a community that pushes you beyond limits.
+                    </p>
+                    <div class="hero-cta" data-animate="fade-up" data-delay="400">
+                        <a href="#contact" data-nav="contact" class="btn btn-primary btn-lg">
+                            <span>Start Your Journey</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#programs" data-nav="programs" class="btn btn-outline btn-lg">
+                            <span>Explore Programs</span>
+                        </a>
+                    </div>
+                    <div class="hero-stats" data-animate="fade-up" data-delay="600">
+                        <div class="hero-stat">
+                            <span class="stat-number" data-count="5000">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Active Members</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-number" data-count="15">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Expert Trainers</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-number" data-count="98">0</span><span class="stat-percent">%</span>
+                            <span class="stat-label">Satisfaction Rate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-scroll-indicator">
+                    <div class="scroll-mouse">
+                        <div class="scroll-wheel"></div>
+                    </div>
+                    <span>Scroll Down</span>
+                </div>
+            </div>
+
+            <!-- FEATURES STRIP -->
+            <div class="features-strip" data-animate="fade-up">
+                <div class="container">
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                            <div class="feature-info">
+                                <h4>24/7 Access</h4>
+                                <p>Train anytime that suits you</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-wifi"></i></div>
+                            <div class="feature-info">
+                                <h4>Smart Equipment</h4>
+                                <p>IoT connected machines</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-heart-pulse"></i></div>
+                            <div class="feature-info">
+                                <h4>Health Tracking</h4>
+                                <p>Real-time vitals monitoring</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+                            <div class="feature-info">
+                                <h4>Certified Trainers</h4>
+                                <p>Internationally qualified</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ABOUT PREVIEW SECTION -->
+            <div class="section about-preview" data-animate="fade-up">
+                <div class="container">
+                    <div class="about-preview-grid">
+                        <div class="about-preview-media">
+                            <div class="about-img-main">
+                                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/a43502139128971.622a0e70b2b1f.jpg"
+                                    alt="Gym Interior" loading="lazy">
+                            </div>
+                            <div class="about-img-float">
+                                <img src="https://www.fitnessmatters.org/wp-content/uploads/2022/05/IMG-20fff210307-WA0012.jpg"
+                                    alt="Training Session" loading="lazy">
+                            </div>
+                            <div class="about-exp-badge">
+                                <span class="exp-number">12+</span>
+                                <span class="exp-text">Years of Excellence</span>
+                            </div>
+                        </div>
+                        <div class="about-preview-content">
+                            <span class="section-tag">About Us</span>
+                            <h2 class="section-title">More Than Just a <span class="accent-text">Gym</span></h2>
+                            <p class="section-desc">
+                                At H2O FITNESS Singur, we believe in sculpting not just bodies but lifestyles. Founded
+                                in
+                                2012,
+                                we've grown from a single-room studio to a 20,000 sq. ft. premium fitness destination
+                                equipped with the latest technology and guided by passionate experts.
+                            </p>
+                            <div class="about-highlights">
+                                <div class="about-highlight">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>State-of-the-art Technogym equipment</span>
+                                </div>
+                                <div class="about-highlight">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Olympic-grade lifting platforms</span>
+                                </div>
+                                <div class="about-highlight">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Dedicated yoga & meditation studio</span>
+                                </div>
+                                <div class="about-highlight">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Nutrition café & supplement bar</span>
+                                </div>
+                            </div>
+                            <a href="#about" data-nav="about" class="btn btn-primary">
+                                <span>Learn More</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROGRAMS PREVIEW -->
+            <div class="section programs-preview" data-animate="fade-up">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">Our Programs</span>
+                        <h2 class="section-title">Train Your <span class="accent-text">Way</span></h2>
+                        <p class="section-subtitle">Choose from our diverse range of specialized programs designed for
+                            every fitness level and goal.</p>
+                    </div>
+                    <div class="programs-grid">
+                        <div class="program-card" data-animate="fade-up">
+                            <div class="program-card-img">
+                                <img src="https://plus.unsplash.com/premium_photo-1726614200880-b4c9b8b88a7b?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwZ3ltfGVufDB8fDB8fHww"
+                                    alt="Strength Training" loading="lazy">
+                                <div class="program-overlay">
+                                    <a href="#programs" data-nav="programs" class="btn btn-sm btn-primary">View
+                                        Program</a>
+                                </div>
+                            </div>
+                            <div class="program-card-body">
+                                <span class="program-tag">Strength</span>
+                                <h3>Strength Training</h3>
+                                <p>Build raw power and sculpt your physique with progressive overload methods.</p>
+                            </div>
+                        </div>
+                        <div class="program-card" data-animate="fade-up" data-delay="100">
+                            <div class="program-card-img">
+                                <img src="https://cdn.prod.website-files.com/66c501d753ae2a8c705375b6/67f015f86c56dd790c22570c_67e4045fb70b66b4c16f33fb_AF_HERO_HIITWorkoutPlanForMuscleGain%2520(1).jpeg"
+                                    alt="HIIT & Cardio" loading="lazy">
+                                <div class="program-overlay">
+                                    <a href="#programs" data-nav="programs" class="btn btn-sm btn-primary">View
+                                        Program</a>
+                                </div>
+                            </div>
+                            <div class="program-card-body">
+                                <span class="program-tag">Cardio</span>
+                                <h3>HIIT & Cardio</h3>
+                                <p>Torch calories and boost endurance with high-intensity interval sessions.</p>
+                            </div>
+                        </div>
+                        <div class="program-card" data-animate="fade-up" data-delay="200">
+                            <div class="program-card-img">
+                                <img src="https://i.ytimg.com/vi/L7r_kmT2w6Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAXPGkCvfdU--6PswkHVfjiqEBOYg"
+                                    alt="Yoga & Flexibility" loading="lazy">
+                                <div class="program-overlay">
+                                    <a href="#programs" data-nav="programs" class="btn btn-sm btn-primary">View
+                                        Program</a>
+                                </div>
+                            </div>
+                            <div class="program-card-body">
+                                <span class="program-tag">Wellness</span>
+                                <h3>Yoga & Flexibility</h3>
+                                <p>Find balance, improve mobility, and reduce stress through mindful movement.</p>
+                            </div>
+                        </div>
+                        <div class="program-card" data-animate="fade-up" data-delay="300">
+                            <div class="program-card-img">
+                                <img src="https://miro.medium.com/v2/resize:fit:1280/1*HBFDGhXrvwON75HT_vWEnA.jpeg"
+                                    alt="CrossFit" loading="lazy">
+                                <div class="program-overlay">
+                                    <a href="#programs" data-nav="programs" class="btn btn-sm btn-primary">View
+                                        Program</a>
+                                </div>
+                            </div>
+                            <div class="program-card-body">
+                                <span class="program-tag">CrossFit</span>
+                                <h3>CrossFit WOD</h3>
+                                <p>Push boundaries with constantly varied functional movements at high intensity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TRANSFORMATION PREVIEW (Before/After Slider) -->
+            <div class="section transformation-preview" data-animate="fade-up">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">Real Results</span>
+                        <h2 class="section-title">Stunning <span class="accent-text">Transformations</span></h2>
+                        <p class="section-subtitle">Drag the slider to witness real member transformations. No filters,
+                            no shortcuts — pure dedication.</p>
+                    </div>
+                    <div class="transformation-sliders">
+                        <div class="ba-slider" data-animate="zoom-in">
+                            <div class="ba-image ba-before">
+                                <img src="https://raw.githubusercontent.com/rolsex946/H2O/refs/heads/main/before1.jpg"
+                                    alt="Before Transformation">
+                            </div>
+                            <div class="ba-image ba-after">
+                                <img src="https://raw.githubusercontent.com/rolsex946/H2O/refs/heads/main/after1.jpg"
+                                    alt="After Transformation">
+                            </div>
+                            <div class="ba-handle">
+                                <div class="ba-handle-line"></div>
+                                <div class="ba-handle-circle">
+                                    <i class="fas fa-arrows-left-right"></i>
+                                </div>
+                                <div class="ba-handle-line"></div>
+                            </div>
+                            <span class="ba-label ba-label-before">Before</span>
+                            <span class="ba-label ba-label-after">After</span>
+                        </div>
+                        <div class="ba-slider" data-animate="zoom-in" data-delay="200">
+                            <div class="ba-image ba-before">
+                                <img src="https://raw.githubusercontent.com/rolsex946/H2O/refs/heads/main/before2.jpg"
+                                    alt="Before Transformation 2">
+                            </div>
+                            <div class="ba-image ba-after">
+                                <img src="https://raw.githubusercontent.com/rolsex946/H2O/refs/heads/main/after2.jpg"
+                                    alt="After Transformation 2">
+                            </div>
+                            <div class="ba-handle">
+                                <div class="ba-handle-line"></div>
+                                <div class="ba-handle-circle">
+                                    <i class="fas fa-arrows-left-right"></i>
+                                </div>
+                                <div class="ba-handle-line"></div>
+                            </div>
+                            <span class="ba-label ba-label-before">Before</span>
+                            <span class="ba-label ba-label-after">After</span>
+                        </div>
+                    </div>
+                    <div class="text-center" style="margin-top:2.5rem;">
+                        <a href="#transformation" data-nav="transformation" class="btn btn-outline">
+                            <span>View All Transformations</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RATINGS / REVIEWS SLIDER -->
+            <div class="section reviews-section" data-animate="fade-up">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">Testimonials</span>
+                        <h2 class="section-title">What Our Members <span class="accent-text">Say</span></h2>
+                        <div class="google-rating-badge">
+                            <img src="https://www.google.com/favicon.ico" alt="Google" class="google-icon">
+                            <span class="rating-score">4.9</span>
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">Based on 350+ reviews</span>
+                        </div>
+                    </div>
+                    <div class="reviews-slider" id="reviewsSlider">
+                        <div class="reviews-track" id="reviewsTrack">
+                            <!-- Reviews injected by JS -->
+                        </div>
+                    </div>
+                    <div class="reviews-controls">
+                        <button class="review-nav-btn" id="reviewPrev"><i class="fas fa-chevron-left"></i></button>
+                        <div class="review-dots" id="reviewDots"></div>
+                        <button class="review-nav-btn" id="reviewNext"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRICING PREVIEW -->
+            <div class="section pricing-preview" data-animate="fade-up">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">Pricing</span>
+                        <h2 class="section-title">Plans That <span class="accent-text">Fit</span> You</h2>
+                        <p class="section-subtitle">Flexible memberships with no hidden fees. Start with a free trial.
+                        </p>
+                    </div>
+                    <div class="pricing-toggle-container">
+                        <span class="pricing-toggle-label" id="monthlyLabel">Monthly</span>
+                        <label class="pricing-toggle">
+                            <input type="checkbox" id="pricingToggle">
+                            <span class="pricing-toggle-slider"></span>
+                        </label>
+                        <span class="pricing-toggle-label" id="yearlyLabel">Yearly <span class="save-badge">Save
+                                20%</span></span>
+                    </div>
+                    <div class="pricing-grid" id="pricingGrid">
+                        <!-- Pricing cards injected by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- TRAINERS PREVIEW -->
+            <div class="section trainers-preview" data-animate="fade-up">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">Our Team</span>
+                        <h2 class="section-title">Meet the <span class="accent-text">Experts</span></h2>
+                    </div>
+                    <div class="trainers-grid" id="trainersGrid">
+                        <!-- Trainers injected by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA BANNER -->
+            <div class="section cta-banner" data-animate="fade-up">
+                <div class="container">
+                    <div class="cta-banner-inner">
+                        <div class="cta-content">
+                            <h2>Ready to <span class="accent-text">Transform?</span></h2>
+                            <p>Book your free trial session today and experience the H2O FITNESS difference.</p>
+                            <div class="cta-btns">
+                                <a href="#contact" data-nav="contact" class="btn btn-primary btn-lg">
+                                    <span>Book Free Trial</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="https://wa.me/919804819829" target="_blank" class="btn btn-whatsapp btn-lg">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>Chat on WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cta-visual">
+                            <div class="cta-circle"></div>
+                            <div class="cta-circle cta-circle-2"></div>
+                            <i class="fas fa-dumbbell cta-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ SECTION -->
+            <div class="section faq-section" data-animate="fade-up">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">FAQ</span>
+                        <h2 class="section-title">Frequently Asked <span class="accent-text">Questions</span></h2>
+                    </div>
+                    <div class="faq-grid">
+                        <div class="faq-column" id="faqColumn1">
+                            <!-- FAQs injected by JS -->
+                        </div>
+                        <div class="faq-column" id="faqColumn2">
+                            <!-- FAQs injected by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LATEST BLOG POSTS -->
+            <div class="section blog-preview" data-animate="fade-up">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">Blog</span>
+                        <h2 class="section-title">Latest <span class="accent-text">Insights</span></h2>
+                    </div>
+                    <div class="blog-grid" id="blogPreviewGrid">
+                        <!-- Blog posts injected by JS -->
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ============================================
+             PAGE: ABOUT
+             ============================================ -->
+        <section class="page" id="page-about" data-page="about" style="display:none;">
+            <div class="page-hero">
+                <div class="container">
+                    <span class="section-tag">About Us</span>
+                    <h1 class="page-hero-title">The H2O FITNESS <span class="accent-text">Story</span></h1>
+                    <p class="page-hero-subtitle">A decade of transforming lives through fitness, discipline, and
+                        community.</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="about-detail-grid">
+                        <div class="about-detail-content">
+                            <h2>Our <span class="accent-text">Mission</span></h2>
+                            <p>Founded in 2012 by former national athlete Arjun Mehra, H2O FITNESS Singur was born from
+                                a
+                                simple belief: everyone deserves access to world-class fitness facilities and guidance.
+                                What started as a 2,000 sq. ft. garage gym has evolved into a 20,000 sq. ft. premium
+                                fitness destination serving over 5,000 active members.</p>
+                            <p>We don't just build bodies — we build confidence, discipline, and a community that
+                                uplifts each other. Our approach combines cutting-edge sports science with personalized
+                                attention, ensuring every member gets the roadmap they need to achieve their goals.</p>
+                            <div class="about-values">
+                                <div class="value-card">
+                                    <i class="fas fa-fire"></i>
+                                    <h4>Passion</h4>
+                                    <p>Every rep, every session counts</p>
+                                </div>
+                                <div class="value-card">
+                                    <i class="fas fa-users"></i>
+                                    <h4>Community</h4>
+                                    <p>Stronger together, always</p>
+                                </div>
+                                <div class="value-card">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <h4>Innovation</h4>
+                                    <p>Science-backed, tech-forward</p>
+                                </div>
+                                <div class="value-card">
+                                    <i class="fas fa-trophy"></i>
+                                    <h4>Excellence</h4>
+                                    <p>Never settle for average</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-detail-media">
+                            <img src="https://picsum.photos/seed/gym-team/500/600.jpg" alt="Our Team" loading="lazy">
+                            <div class="about-media-float-card">
+                                <i class="fas fa-award"></i>
+                                <div>
+                                    <strong>Best Gym 2024</strong>
+                                    <span>Urban Fitness Awards</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Timeline -->
+            <div class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Our <span class="accent-text">Journey</span></h2>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item" data-animate="fade-right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-year">2012</span>
+                                <h4>The Beginning</h4>
+                                <p>Opened our first 2,000 sq ft garage gym with 5 members.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-animate="fade-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-year">2015</span>
+                                <h4>First Expansion</h4>
+                                <p>Moved to a 8,000 sq ft facility. Added CrossFit box and yoga studio.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-animate="fade-right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-year">2018</span>
+                                <h4>Tech Integration</h4>
+                                <p>Launched smart equipment, app-based tracking, and virtual coaching.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-animate="fade-left">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-year">2021</span>
+                                <h4>Community Hub</h4>
+                                <p>Added nutrition café, recovery lounge, and member community events.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-animate="fade-right">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-year">2024</span>
+                                <h4>Premium Destination</h4>
+                                <p>20,000 sq ft world-class facility with 5,000+ members and counting.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: PROGRAMS
+             ============================================ -->
+        <section class="page" id="page-programs" data-page="programs" style="display:none;">
+            <div class="page-hero">
+                <div class="container">
+                    <span class="section-tag">Programs</span>
+                    <h1 class="page-hero-title">Find Your <span class="accent-text">Program</span></h1>
+                    <p class="page-hero-subtitle">Expertly crafted training programs for every goal, every level, every
+                        body.</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="program-filters">
+                        <button class="filter-btn active" data-filter="all">All Programs</button>
+                        <button class="filter-btn" data-filter="strength">Strength</button>
+                        <button class="filter-btn" data-filter="cardio">Cardio</button>
+                        <button class="filter-btn" data-filter="yoga">Yoga</button>
+                        <button class="filter-btn" data-filter="crossfit">CrossFit</button>
+                        <button class="filter-btn" data-filter="personal">Personal</button>
+                    </div>
+                    <div class="programs-full-grid" id="programsFullGrid">
+                        <!-- Programs injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: TRANSFORMATION
+             ============================================ -->
+        <section class="page" id="page-transformation" data-page="transformation" style="display:none;">
+            <div class="page-hero">
+                <div class="container">
+                    <span class="section-tag">Transformations</span>
+                    <h1 class="page-hero-title">Real People, Real <span class="accent-text">Results</span></h1>
+                    <p class="page-hero-subtitle">These transformations are the result of consistent effort and expert
+                        guidance.</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="transformation-grid" id="transformationGrid">
+                        <!-- Transformation cards injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: TRAINERS
+             ============================================ -->
+        <section class="page" id="page-trainers" data-page="trainers" style="display:none;">
+            <div class="page-hero">
+                <div class="container">
+                    <span class="section-tag">Trainers</span>
+                    <h1 class="page-hero-title">Our Expert <span class="accent-text">Team</span></h1>
+                    <p class="page-hero-subtitle">Certified professionals dedicated to your success.</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="trainers-full-grid" id="trainersFullGrid">
+                        <!-- Trainers injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: PRICING
+             ============================================ -->
+        <section class="page" id="page-pricing" data-page="pricing" style="display:none;">
+            <div class="page-hero">
+                <div class="container">
+                    <span class="section-tag">Pricing</span>
+                    <h1 class="page-hero-title">Simple & Transparent <span class="accent-text">Pricing</span></h1>
+                    <p class="page-hero-subtitle">No hidden fees. No contracts. Cancel anytime.</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="pricing-toggle-container">
+                        <span class="pricing-toggle-label" id="monthlyLabel2">Monthly</span>
+                        <label class="pricing-toggle">
+                            <input type="checkbox" id="pricingToggle2">
+                            <span class="pricing-toggle-slider"></span>
+                        </label>
+                        <span class="pricing-toggle-label" id="yearlyLabel2">Yearly <span class="save-badge">Save
+                                20%</span></span>
+                    </div>
+                    <div class="pricing-grid pricing-grid-full" id="pricingGridFull">
+                        <!-- Pricing cards injected by JS -->
+                    </div>
+                    <div class="pricing-comparison" data-animate="fade-up">
+                        <h3>Plan Comparison</h3>
+                        <div class="comparison-table-wrapper">
+                            <table class="comparison-table" id="comparisonTable">
+                                <!-- Table injected by JS -->
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: SHOP
+             ============================================ -->
+        <section class="page" id="page-shop" data-page="shop" style="display:none;">
+            <div class="page-hero page-hero-shop">
+                <div class="container">
+                    <span class="section-tag">Shop</span>
+                    <h1 class="page-hero-title">Premium <span class="accent-text">Gear</span></h1>
+                    <p class="page-hero-subtitle">Equip yourself with the best. From supplements to apparel, we've got
+                        you covered.</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="shop-layout">
+                        <!-- Shop Sidebar Filters -->
+                        <aside class="shop-sidebar">
+                            <div class="shop-filter-group">
+                                <h4>Category</h4>
+                                <div class="filter-checkboxes" id="shopCategoryFilters">
+                                    <label class="filter-checkbox"><input type="checkbox" value="all" checked> <span>All
+                                            Categories</span></label>
+                                    <label class="filter-checkbox"><input type="checkbox" value="supplements">
+                                        <span>Supplements</span></label>
+                                    <label class="filter-checkbox"><input type="checkbox" value="apparel">
+                                        <span>Apparel</span></label>
+                                    <label class="filter-checkbox"><input type="checkbox" value="equipment">
+                                        <span>Equipment</span></label>
+                                    <label class="filter-checkbox"><input type="checkbox" value="accessories">
+                                        <span>Accessories</span></label>
+                                </div>
+                            </div>
+                            <div class="shop-filter-group">
+                                <h4>Price Range</h4>
+                                <div class="price-range-slider">
+                                    <input type="range" id="priceMin" min="0" max="10000" value="0" step="100">
+                                    <input type="range" id="priceMax" min="0" max="10000" value="10000" step="100">
+                                    <div class="price-range-labels">
+                                        <span id="priceMinLabel">₹0</span>
+                                        <span id="priceMaxLabel">₹10,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-filter-group">
+                                <h4>Sort By</h4>
+                                <select id="shopSortBy" class="shop-select">
+                                    <option value="default">Default</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="name-az">Name: A-Z</option>
+                                    <option value="name-za">Name: Z-A</option>
+                                    <option value="popular">Most Popular</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-outline btn-sm" id="shopResetFilters">
+                                <i class="fas fa-undo"></i> Reset Filters
+                            </button>
+                        </aside>
+                        <!-- Shop Products Grid -->
+                        <div class="shop-products">
+                            <div class="shop-products-header">
+                                <span id="shopResultCount">Showing 0 products</span>
+                                <div class="shop-view-toggle">
+                                    <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                                </div>
+                            </div>
+                            <div class="products-grid" id="productsGrid">
+                                <!-- Products injected by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: BLOG
+             ============================================ -->
+        <section class="page" id="page-blog" data-page="blog" style="display:none;">
+            <div class="page-hero">
+                <div class="container">
+                    <span class="section-tag">Blog</span>
+                    <h1 class="page-hero-title">Fitness <span class="accent-text">Insights</span></h1>
+                    <p class="page-hero-subtitle">Expert articles, tips, and stories to fuel your fitness journey.</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="blog-categories" id="blogCategories">
+                        <button class="filter-btn active" data-category="all">All</button>
+                        <button class="filter-btn" data-category="training">Training</button>
+                        <button class="filter-btn" data-category="nutrition">Nutrition</button>
+                        <button class="filter-btn" data-category="lifestyle">Lifestyle</button>
+                        <button class="filter-btn" data-category="recovery">Recovery</button>
+                    </div>
+                    <div class="blog-full-grid" id="blogFullGrid">
+                        <!-- Blog posts injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: BLOG POST (Dynamic)
+             ============================================ -->
+        <section class="page" id="page-blog-post" data-page="blog-post" style="display:none;">
+            <div class="section">
+                <div class="container">
+                    <div class="blog-post-layout">
+                        <article class="blog-post-main" id="blogPostContent">
+                            <!-- Blog post content injected by JS -->
+                        </article>
+                        <aside class="blog-post-sidebar">
+                            <div class="blog-sidebar-widget">
+                                <h4>Search</h4>
+                                <div class="blog-search">
+                                    <input type="text" placeholder="Search articles..." id="blogSearchInput">
+                                    <button><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                            <div class="blog-sidebar-widget">
+                                <h4>Categories</h4>
+                                <ul class="blog-cat-list" id="blogSidebarCats">
+                                    <!-- Injected by JS -->
+                                </ul>
+                            </div>
+                            <div class="blog-sidebar-widget">
+                                <h4>Recent Posts</h4>
+                                <div class="recent-posts" id="recentPosts">
+                                    <!-- Injected by JS -->
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: GALLERY
+             ============================================ -->
+        <section class="page" id="page-gallery" data-page="gallery" style="display:none;">
+            <div class="page-hero">
+                <div class="container">
+                    <span class="section-tag">Gallery</span>
+                    <h1 class="page-hero-title">Inside <span class="accent-text">H2O FITNESS</span></h1>
+                    <p class="page-hero-subtitle">A glimpse into our world-class facility and vibrant community.</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="gallery-filters">
+                        <button class="filter-btn active" data-gallery-filter="all">All</button>
+                        <button class="filter-btn" data-gallery-filter="facility">Facility</button>
+                        <button class="filter-btn" data-gallery-filter="training">Training</button>
+                        <button class="filter-btn" data-gallery-filter="events">Events</button>
+                        <button class="filter-btn" data-gallery-filter="community">Community</button>
+                    </div>
+                    <div class="masonry-grid" id="galleryGrid">
+                        <!-- Gallery items injected by JS -->
+                    </div>
+                </div>
+            </div>
+            <!-- Lightbox -->
+            <div class="lightbox" id="lightbox">
+                <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+                <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i
+                        class="fas fa-chevron-left"></i></button>
+                <button class="lightbox-nav lightbox-next" id="lightboxNext"><i
+                        class="fas fa-chevron-right"></i></button>
+                <div class="lightbox-content">
+                    <img id="lightboxImg" src="" alt="Gallery Image">
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: CONTACT
+             ============================================ -->
+        <section class="page" id="page-contact" data-page="contact" style="display:none;">
+            <div class="page-hero">
+                <div class="container">
+                    <span class="section-tag">Contact</span>
+                    <h1 class="page-hero-title">Get In <span class="accent-text">Touch</span></h1>
+                    <p class="page-hero-subtitle">We'd love to hear from you. Reach out for any queries or to schedule a
+                        visit.</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <div class="contact-info-card">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h4>Visit Us</h4>
+                                <p>123 Fitness Boulevard, Sector 15<br>Gurugram, Haryana 122001</p>
+                            </div>
+                            <div class="contact-info-card">
+                                <i class="fas fa-phone-alt"></i>
+                                <h4>Call Us</h4>
+                                <p><a href="tel:+919804819829">+91 98048 19829</a></p>
+                            </div>
+                            <div class="contact-info-card">
+                                <i class="fas fa-envelope"></i>
+                                <h4>Email Us</h4>
+                                <p><a href="mailto:info@H2O FITNESSfitness.in">info@H2O FITNESSfitness.in</a></p>
+                            </div>
+                            <div class="contact-info-card">
+                                <i class="fas fa-clock"></i>
+                                <h4>Hours</h4>
+                                <p>Mon-Sat: 5:00 AM - 11:00 PM<br>Sunday: 6:00 AM - 10:00 PM</p>
+                            </div>
+                            <div class="contact-socials">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="contact-form-wrapper">
+                            <form class="contact-form" id="contactForm">
+                                <h3>Send Us a Message</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contactName">Full Name *</label>
+                                        <input type="text" id="contactName" required placeholder="Your full name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contactPhone">Phone *</label>
+                                        <input type="tel" id="contactPhone" required placeholder="+91 XXXXX XXXXX">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactEmail">Email</label>
+                                    <input type="email" id="contactEmail" placeholder="your@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactSubject">Subject</label>
+                                    <select id="contactSubject">
+                                        <option value="">Select a subject</option>
+                                        <option value="General Enquiry">General Enquiry</option>
+                                        <option value="Membership">Membership</option>
+                                        <option value="Personal Training">Personal Training</option>
+                                        <option value="Group Classes">Group Classes</option>
+                                        <option value="Feedback">Feedback</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactMessage">Message *</label>
+                                    <textarea id="contactMessage" rows="4" required
+                                        placeholder="How can we help you?"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-full">
+                                    <span>Send Message</span>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Map -->
+                    <div class="contact-map" data-animate="fade-up">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.0!2d77.05!3d28.47!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI4JzEyLjAiTiA3N8KwMDMnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: PRIVACY POLICY
+             ============================================ -->
+        <section class="page" id="page-privacy-policy" data-page="privacy-policy" style="display:none;">
+            <div class="page-hero page-hero-policy">
+                <div class="container">
+                    <span class="section-tag">Legal</span>
+                    <h1 class="page-hero-title">Privacy <span class="accent-text">Policy</span></h1>
+                    <p class="page-hero-subtitle">Last updated: January 15, 2025</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="policy-content" id="privacyPolicyContent">
+                        <!-- Content injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: TERMS & CONDITIONS
+             ============================================ -->
+        <section class="page" id="page-terms-conditions" data-page="terms-conditions" style="display:none;">
+            <div class="page-hero page-hero-policy">
+                <div class="container">
+                    <span class="section-tag">Legal</span>
+                    <h1 class="page-hero-title">Terms & <span class="accent-text">Conditions</span></h1>
+                    <p class="page-hero-subtitle">Last updated: January 15, 2025</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="policy-content" id="termsConditionsContent">
+                        <!-- Content injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: REFUND POLICY
+             ============================================ -->
+        <section class="page" id="page-refund-policy" data-page="refund-policy" style="display:none;">
+            <div class="page-hero page-hero-policy">
+                <div class="container">
+                    <span class="section-tag">Legal</span>
+                    <h1 class="page-hero-title">Refund <span class="accent-text">Policy</span></h1>
+                    <p class="page-hero-subtitle">Last updated: January 15, 2025</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="policy-content" id="refundPolicyContent">
+                        <!-- Content injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: COOKIE POLICY
+             ============================================ -->
+        <section class="page" id="page-cookie-policy" data-page="cookie-policy" style="display:none;">
+            <div class="page-hero page-hero-policy">
+                <div class="container">
+                    <span class="section-tag">Legal</span>
+                    <h1 class="page-hero-title">Cookie <span class="accent-text">Policy</span></h1>
+                    <p class="page-hero-subtitle">Last updated: January 15, 2025</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="policy-content" id="cookiePolicyContent">
+                        <!-- Content injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: DISCLAIMER
+             ============================================ -->
+        <section class="page" id="page-disclaimer" data-page="disclaimer" style="display:none;">
+            <div class="page-hero page-hero-policy">
+                <div class="container">
+                    <span class="section-tag">Legal</span>
+                    <h1 class="page-hero-title"><span class="accent-text">Disclaimer</span></h1>
+                    <p class="page-hero-subtitle">Last updated: January 15, 2025</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="policy-content" id="disclaimerContent">
+                        <!-- Content injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PAGE: SHIPPING POLICY
+             ============================================ -->
+        <section class="page" id="page-shipping-policy" data-page="shipping-policy" style="display:none;">
+            <div class="page-hero page-hero-policy">
+                <div class="container">
+                    <span class="section-tag">Legal</span>
+                    <h1 class="page-hero-title">Shipping <span class="accent-text">Policy</span></h1>
+                    <p class="page-hero-subtitle">Last updated: January 15, 2025</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="policy-content" id="shippingPolicyContent">
+                        <!-- Content injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Footer -->
-    <footer id="main-footer" class="main-footer">
+    <!-- ============================================
+         FOOTER — Premium footer
+         ============================================ -->
+    <footer id="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-col footer-brand">
-                        <a href="#/home" data-nav class="footer-logo">
+                        <div class="footer-logo">
                             <span class="logo-icon"><i class="fas fa-dumbbell"></i></span>
-                            <span class="logo-text">H2O<span class="logo-accent">Singur</span></span>
-                        </a>
-                        <p class="footer-desc">Transform your body, H2O your mind. Premium fitness training designed
-                            for those who refuse to settle for average.</p>
+                            <span class="logo-text">
+                                <span class="logo-main">H2O FITNESS</span>
+                                <span class="logo-sub">SINGUR</span>
+                            </span>
+                        </div>
+                        <p>Transform your body, transform your life. Premium fitness experience since 2012.</p>
                         <div class="footer-social">
                             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                         </div>
                     </div>
                     <div class="footer-col">
-                        <h5 class="footer-heading">Quick Links</h5>
-                        <ul class="footer-links">
-                            <li><a href="#/about" data-nav>About Us</a></li>
-                            <li><a href="#/programs" data-nav>Programs</a></li>
-                            <li><a href="#/trainers" data-nav>Trainers</a></li>
-                            <li><a href="#/pricing" data-nav>Pricing</a></li>
-                            <li><a href="#/schedule" data-nav>Schedule</a></li>
-                            <li><a href="#/gallery" data-nav>Gallery</a></li>
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#about" data-nav="about">About Us</a></li>
+                            <li><a href="#programs" data-nav="programs">Programs</a></li>
+                            <li><a href="#pricing" data-nav="pricing">Pricing</a></li>
+                            <li><a href="#trainers" data-nav="trainers">Trainers</a></li>
+                            <li><a href="#gallery" data-nav="gallery">Gallery</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h5 class="footer-heading">Resources</h5>
-                        <ul class="footer-links">
-                            <li><a href="#/blog" data-nav>Blog</a></li>
-                            <li><a href="#/faq" data-nav>FAQ</a></li>
-                            <li><a href="#/transformations" data-nav>Success Stories</a></li>
-                            <li><a href="#/shop" data-nav>Shop</a></li>
-                            <li><a href="#/contact" data-nav>Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h5 class="footer-heading">Legal</h5>
-                        <ul class="footer-links">
-                            <li><a href="#/privacy-policy" data-nav>Privacy Policy</a></li>
-                            <li><a href="#/terms" data-nav>Terms & Conditions</a></li>
-                            <li><a href="#/refund-policy" data-nav>Refund Policy</a></li>
-                            <li><a href="#/cookie-policy" data-nav>Cookie Policy</a></li>
-                            <li><a href="#/disclaimer" data-nav>Disclaimer</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h5 class="footer-heading">Contact Info</h5>
-                        <ul class="footer-contact">
-                            <li><i class="fas fa-map-marker-alt"></i><span>123 Singur Avenue, Downtown, NY 10001</span>
+                        <h4>Programs</h4>
+                        <ul>
+                            <li><a href="#programs" data-nav="programs" data-filter="strength">Strength Training</a>
                             </li>
-                            <li><i class="fas fa-phone"></i><span>+1 (980) 481-9829</span></li>
-                            <li><i class="fas fa-envelope"></i><span>hello@H2OSingur.com</span></li>
-                            <li><i class="fas fa-clock"></i><span>Mon-Sat: 5AM - 11PM</span></li>
+                            <li><a href="#programs" data-nav="programs" data-filter="cardio">HIIT & Cardio</a></li>
+                            <li><a href="#programs" data-nav="programs" data-filter="yoga">Yoga & Flexibility</a></li>
+                            <li><a href="#programs" data-nav="programs" data-filter="crossfit">CrossFit</a></li>
+                            <li><a href="#programs" data-nav="programs" data-filter="personal">Personal Training</a>
+                            </li>
                         </ul>
                     </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#blog" data-nav="blog">Blog</a></li>
+                            <li><a href="#shop" data-nav="shop">Shop</a></li>
+                            <li><a href="#contact" data-nav="contact">Contact</a></li>
+                            <li><a href="#transformation" data-nav="transformation">Transformations</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#privacy-policy" data-nav="privacy-policy">Privacy Policy</a></li>
+                            <li><a href="#terms-conditions" data-nav="terms-conditions">Terms & Conditions</a></li>
+                            <li><a href="#refund-policy" data-nav="refund-policy">Refund Policy</a></li>
+                            <li><a href="#cookie-policy" data-nav="cookie-policy">Cookie Policy</a></li>
+                            <li><a href="#disclaimer" data-nav="disclaimer">Disclaimer</a></li>
+                            <li><a href="#shipping-policy" data-nav="shipping-policy">Shipping Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-newsletter">
+            <div class="container">
+                <div class="newsletter-inner">
+                    <div class="newsletter-text">
+                        <h4>Subscribe to Our Newsletter</h4>
+                        <p>Get fitness tips, exclusive offers, and updates delivered to your inbox.</p>
+                    </div>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Enter your email" required id="newsletterEmail">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-inner">
-                    <p>&copy; 2025 H2O Singur Fitness Studio. All rights reserved.</p>
-                    <p>Crafted with <i class="fas fa-heart" style="color:var(--accent)"></i> for champions</p>
+                    <p>&copy; 2025 H2O FITNESS Singur. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#privacy-policy" data-nav="privacy-policy">Privacy</a>
+                        <a href="#terms-conditions" data-nav="terms-conditions">Terms</a>
+                        <a href="#refund-policy" data-nav="refund-policy">Refund</a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Appointment/Enquiry Modal -->
-    <div id="appointment-modal" class="modal-overlay" role="dialog" aria-modal="true">
-        <div class="modal-container appointment-modal-container">
-            <button class="modal-close" id="appointment-modal-close" aria-label="Close"><i
-                    class="fas fa-times"></i></button>
+    <!-- ============================================
+         FLOATING ACTION BUTTONS
+         Bottom right corner — WhatsApp + Appointment
+         ============================================ -->
+    <div class="floating-actions">
+        <a href="https://wa.me/919804819829" target="_blank" class="floating-btn floating-whatsapp"
+            aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <button class="floating-btn floating-appointment" id="floatingAppointment" aria-label="Book Appointment">
+            <i class="fas fa-calendar-check"></i>
+        </button>
+    </div>
+
+    <!-- ============================================
+         APPOINTMENT / ENQUIRY MODAL
+         ============================================ -->
+    <div class="modal-overlay" id="appointmentModal">
+        <div class="modal-container">
+            <button class="modal-close" id="appointmentModalClose">
+                <i class="fas fa-times"></i>
+            </button>
             <div class="modal-header">
-                <h2>Book Your <span class="text-accent">Appointment</span></h2>
-                <p>Start your transformation journey today</p>
+                <h2><i class="fas fa-calendar-check"></i> Book Appointment</h2>
+                <p>Fill in the details below and we'll get back to you within 24 hours.</p>
             </div>
-            <form id="appointment-form" class="premium-form" novalidate>
-                <div class="form-grid">
+            <form class="appointment-form" id="appointmentForm">
+                <div class="form-row">
                     <div class="form-group">
-                        <label for="appt-name">Full Name <span class="required">*</span></label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-user"></i>
-                            <input type="text" id="appt-name" name="fullName" placeholder="John Doe" required>
-                        </div>
+                        <label for="apptName">Full Name *</label>
+                        <input type="text" id="apptName" required placeholder="Your full name">
                         <span class="form-error"></span>
                     </div>
                     <div class="form-group">
-                        <label for="appt-email">Email Address <span class="required">*</span></label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-envelope"></i>
-                            <input type="email" id="appt-email" name="email" placeholder="john@example.com" required>
-                        </div>
-                        <span class="form-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="appt-phone">Phone Number <span class="required">*</span></label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-phone"></i>
-                            <input type="tel" id="appt-phone" name="phone" placeholder="+1 234 567 890" required>
-                        </div>
-                        <span class="form-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="appt-age">Age</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-birthday-cake"></i>
-                            <input type="number" id="appt-age" name="age" placeholder="25" min="10" max="100">
-                        </div>
-                        <span class="form-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="appt-gender">Gender <span class="required">*</span></label>
-                        <div class="input-wrapper select-wrapper">
-                            <i class="fas fa-venus-mars"></i>
-                            <select id="appt-gender" name="gender" required>
-                                <option value="">Select Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Non-Binary">Non-Binary</option>
-                                <option value="Prefer Not to Say">Prefer Not to Say</option>
-                            </select>
-                            <i class="fas fa-chevron-down select-arrow"></i>
-                        </div>
-                        <span class="form-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="appt-program">Preferred Program <span class="required">*</span></label>
-                        <div class="input-wrapper select-wrapper">
-                            <i class="fas fa-dumbbell"></i>
-                            <select id="appt-program" name="program" required>
-                                <option value="">Select Program</option>
-                                <option value="Strength Training">Strength Training</option>
-                                <option value="Cardio & HIIT">Cardio & HIIT</option>
-                                <option value="Yoga & Flexibility">Yoga & Flexibility</option>
-                                <option value="Boxing & MMA">Boxing & MMA</option>
-                                <option value="CrossFit">CrossFit</option>
-                                <option value="Personal Training">Personal Training</option>
-                                <option value="Group Classes">Group Classes</option>
-                                <option value="Weight Loss Program">Weight Loss Program</option>
-                                <option value="Muscle Building">Muscle Building</option>
-                                <option value="General Fitness">General Fitness</option>
-                            </select>
-                            <i class="fas fa-chevron-down select-arrow"></i>
-                        </div>
-                        <span class="form-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="appt-timeslot">Preferred Time Slot</label>
-                        <div class="input-wrapper select-wrapper">
-                            <i class="fas fa-clock"></i>
-                            <select id="appt-timeslot" name="timeSlot">
-                                <option value="">Select Time Slot</option>
-                                <option value="Early Morning (5-7 AM)">Early Morning (5-7 AM)</option>
-                                <option value="Morning (7-9 AM)">Morning (7-9 AM)</option>
-                                <option value="Late Morning (9-11 AM)">Late Morning (9-11 AM)</option>
-                                <option value="Afternoon (12-3 PM)">Afternoon (12-3 PM)</option>
-                                <option value="Evening (4-7 PM)">Evening (4-7 PM)</option>
-                                <option value="Night (7-10 PM)">Night (7-10 PM)</option>
-                            </select>
-                            <i class="fas fa-chevron-down select-arrow"></i>
-                        </div>
-                        <span class="form-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="appt-goal">Fitness Goal</label>
-                        <div class="input-wrapper select-wrapper">
-                            <i class="fas fa-bullseye"></i>
-                            <select id="appt-goal" name="fitnessGoal">
-                                <option value="">Select Goal</option>
-                                <option value="Weight Loss">Weight Loss</option>
-                                <option value="Muscle Gain">Muscle Gain</option>
-                                <option value="Body Recomposition">Body Recomposition</option>
-                                <option value="Flexibility">Flexibility</option>
-                                <option value="Endurance">Endurance</option>
-                                <option value="Sports Performance">Sports Performance</option>
-                                <option value="General Wellness">General Wellness</option>
-                                <option value="Injury Rehabilitation">Injury Rehabilitation</option>
-                            </select>
-                            <i class="fas fa-chevron-down select-arrow"></i>
-                        </div>
-                        <span class="form-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="appt-experience">Previous Gym Experience</label>
-                        <div class="input-wrapper select-wrapper">
-                            <i class="fas fa-award"></i>
-                            <select id="appt-experience" name="experience">
-                                <option value="">Select Experience Level</option>
-                                <option value="Complete Beginner">Complete Beginner</option>
-                                <option value="Less than 6 months">Less than 6 months</option>
-                                <option value="6 months - 1 year">6 months - 1 year</option>
-                                <option value="1-3 years">1-3 years</option>
-                                <option value="3+ years">3+ years</option>
-                            </select>
-                            <i class="fas fa-chevron-down select-arrow"></i>
-                        </div>
-                        <span class="form-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="appt-hear">How did you hear about us?</label>
-                        <div class="input-wrapper select-wrapper">
-                            <i class="fas fa-search"></i>
-                            <select id="appt-hear" name="referralSource">
-                                <option value="">Select Option</option>
-                                <option value="Instagram">Instagram</option>
-                                <option value="Facebook">Facebook</option>
-                                <option value="YouTube">YouTube</option>
-                                <option value="Google Search">Google Search</option>
-                                <option value="Friend/Family Referral">Friend/Family Referral</option>
-                                <option value="Walk-in">Walk-in</option>
-                                <option value="Other">Other</option>
-                            </select>
-                            <i class="fas fa-chevron-down select-arrow"></i>
-                        </div>
-                        <span class="form-error"></span>
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="appt-startdate">Preferred Start Date</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-calendar-alt"></i>
-                            <input type="date" id="appt-startdate" name="startDate">
-                        </div>
-                        <span class="form-error"></span>
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="appt-medical">Any Medical Conditions or Injuries?</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-notes-medical"></i>
-                            <input type="text" id="appt-medical" name="medicalConditions"
-                                placeholder="E.g., Knee injury, Asthma, None">
-                        </div>
-                        <span class="form-error"></span>
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="appt-message">Additional Message</label>
-                        <div class="input-wrapper textarea-wrapper">
-                            <i class="fas fa-comment-alt"></i>
-                            <textarea id="appt-message" name="message" rows="3"
-                                placeholder="Tell us about your fitness goals, preferences, or any questions..."></textarea>
-                        </div>
+                        <label for="apptPhone">Phone Number *</label>
+                        <input type="tel" id="apptPhone" required placeholder="+91 XXXXX XXXXX">
                         <span class="form-error"></span>
                     </div>
                 </div>
-                <button type="submit" class="form-submit-btn">
-                    <span>Book Appointment via WhatsApp</span>
+                <div class="form-group">
+                    <label for="apptEmail">Email Address</label>
+                    <input type="email" id="apptEmail" placeholder="your@email.com">
+                    <span class="form-error"></span>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="apptAge">Age *</label>
+                        <input type="number" id="apptAge" required placeholder="Your age" min="10" max="80">
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="apptGender">Gender *</label>
+                        <select id="apptGender" required>
+                            <option value="">Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                        <span class="form-error"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="apptProgram">Interested Program *</label>
+                        <select id="apptProgram" required>
+                            <option value="">Select a program</option>
+                            <option value="Strength Training">Strength Training</option>
+                            <option value="HIIT & Cardio">HIIT & Cardio</option>
+                            <option value="Yoga & Flexibility">Yoga & Flexibility</option>
+                            <option value="CrossFit">CrossFit</option>
+                            <option value="Personal Training">Personal Training</option>
+                            <option value="Group Classes">Group Classes</option>
+                            <option value="General Gym Membership">General Gym Membership</option>
+                        </select>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="apptMembership">Preferred Membership *</label>
+                        <select id="apptMembership" required>
+                            <option value="">Select</option>
+                            <option value="Starter (Monthly)">Starter (Monthly)</option>
+                            <option value="Pro (Monthly)">Pro (Monthly)</option>
+                            <option value="Elite (Monthly)">Elite (Monthly)</option>
+                            <option value="Starter (Yearly)">Starter (Yearly)</option>
+                            <option value="Pro (Yearly)">Pro (Yearly)</option>
+                            <option value="Elite (Yearly)">Elite (Yearly)</option>
+                            <option value="Not Sure Yet">Not Sure Yet</option>
+                        </select>
+                        <span class="form-error"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="apptDate">Preferred Date *</label>
+                        <input type="date" id="apptDate" required>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="apptTime">Preferred Time Slot *</label>
+                        <select id="apptTime" required>
+                            <option value="">Select</option>
+                            <option value="5:00 AM - 7:00 AM">5:00 AM - 7:00 AM</option>
+                            <option value="7:00 AM - 9:00 AM">7:00 AM - 9:00 AM</option>
+                            <option value="9:00 AM - 11:00 AM">9:00 AM - 11:00 AM</option>
+                            <option value="11:00 AM - 1:00 PM">11:00 AM - 1:00 PM</option>
+                            <option value="1:00 PM - 3:00 PM">1:00 PM - 3:00 PM</option>
+                            <option value="3:00 PM - 5:00 PM">3:00 PM - 5:00 PM</option>
+                            <option value="5:00 PM - 7:00 PM">5:00 PM - 7:00 PM</option>
+                            <option value="7:00 PM - 9:00 PM">7:00 PM - 9:00 PM</option>
+                        </select>
+                        <span class="form-error"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="apptGoal">Your Fitness Goal</label>
+                    <select id="apptGoal">
+                        <option value="">Select your goal</option>
+                        <option value="Weight Loss">Weight Loss</option>
+                        <option value="Muscle Gain">Muscle Gain</option>
+                        <option value="Body Recomposition">Body Recomposition</option>
+                        <option value="Flexibility & Mobility">Flexibility & Mobility</option>
+                        <option value="Sports Performance">Sports Performance</option>
+                        <option value="General Fitness">General Fitness</option>
+                        <option value="Stress Relief">Stress Relief</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="apptExperience">Fitness Experience Level</label>
+                    <div class="radio-group">
+                        <label class="radio-btn"><input type="radio" name="experience" value="Beginner">
+                            <span>Beginner</span></label>
+                        <label class="radio-btn"><input type="radio" name="experience" value="Intermediate">
+                            <span>Intermediate</span></label>
+                        <label class="radio-btn"><input type="radio" name="experience" value="Advanced">
+                            <span>Advanced</span></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="apptMessage">Additional Message</label>
+                    <textarea id="apptMessage" rows="3"
+                        placeholder="Any specific requirements, injuries, or questions..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-btn">
+                        <input type="checkbox" required>
+                        <span>I agree to the <a href="#terms-conditions" data-nav="terms-conditions">Terms &
+                                Conditions</a> and <a href="#privacy-policy" data-nav="privacy-policy">Privacy
+                                Policy</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-full">
                     <i class="fab fa-whatsapp"></i>
+                    <span>Send Enquiry via WhatsApp</span>
                 </button>
             </form>
         </div>
     </div>
 
-    <!-- Cart Sidebar -->
-    <div id="cart-sidebar" class="cart-sidebar">
-        <div class="cart-sidebar-header">
-            <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
-            <button id="cart-sidebar-close" class="cart-sidebar-close" aria-label="Close"><i
-                    class="fas fa-times"></i></button>
-        </div>
-        <div id="cart-items" class="cart-items">
-            <div class="cart-empty">
-                <i class="fas fa-shopping-bag"></i>
-                <p>Your cart is empty</p>
-                <a href="#/shop" data-nav class="btn-outline-accent">Browse Shop</a>
-            </div>
-        </div>
-        <div class="cart-sidebar-footer">
-            <div class="cart-total">
-                <span>Total</span>
-                <span id="cart-total-amount">$0.00</span>
-            </div>
-            <button id="cart-checkout-btn" class="form-submit-btn" disabled>
-                <span>Buy via WhatsApp</span>
-                <i class="fab fa-whatsapp"></i>
+    <!-- ============================================
+         PRODUCT QUICK VIEW MODAL
+         ============================================ -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-container modal-lg">
+            <button class="modal-close" id="productModalClose">
+                <i class="fas fa-times"></i>
             </button>
+            <div class="product-quick-view" id="productQuickView">
+                <!-- Content injected by JS -->
+            </div>
         </div>
     </div>
-    <div id="cart-overlay" class="cart-overlay"></div>
 
-    <!-- Floating Action Buttons -->
-    <div class="floating-actions">
-        <a href="https://wa.me/919804819829" target="_blank" class="fab-btn fab-whatsapp" aria-label="Chat on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-            <span class="fab-tooltip">Chat with us</span>
-        </a>
-        <button id="fab-appointment" class="fab-btn fab-appointment" aria-label="Book Appointment">
-            <i class="fas fa-calendar-check"></i>
-            <span class="fab-tooltip">Book Appointment</span>
-        </button>
+    <!-- ============================================
+         TOAST NOTIFICATION
+         ============================================ -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ============================================
+         COOKIE CONSENT BANNER
+         ============================================ -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <i class="fas fa-cookie-bite"></i>
+            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of
+                cookies. <a href="#cookie-policy" data-nav="cookie-policy">Learn more</a></p>
+            <div class="cookie-btns">
+                <button class="btn btn-sm btn-primary" id="cookieAccept">Accept All</button>
+                <button class="btn btn-sm btn-outline" id="cookieDecline">Decline</button>
+            </div>
+        </div>
     </div>
 
-    <!-- Back to Top -->
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
+    <!-- ============================================
+         SCROLL TO TOP BUTTON
+         ============================================ -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Toast Notification -->
-    <div id="toast-container" class="toast-container"></div>
+    <!-- ============================================
+         SCRIPTS
+         ============================================ -->
+    <script src="app.js"></script>
 
-    <!-- Quick View Modal -->
-    <div id="quickview-modal" class="modal-overlay" role="dialog" aria-modal="true">
-        <div class="modal-container quickview-modal-container">
-            <button class="modal-close" id="quickview-close" aria-label="Close"><i class="fas fa-times"></i></button>
-            <div id="quickview-content" class="quickview-content"></div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
